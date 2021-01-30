@@ -1,0 +1,12 @@
+{
+  "commit": {
+    "commit": "2c7df055610f83987c5eaf51e59f399cf5dc4f2f",
+    "author": "Sebastian Pardo <sebpardo@gmail.com>",
+    "time": "2021-01-30 21:04:19",
+    "files": 1,
+    "merge": false,
+    "message": "Bump to devel version\n"
+  },
+  "remote": "https://github.com/ropensci/rebird",
+  "pkg": "rebird"
+}
