@@ -1,0 +1,12 @@
+{
+  "commit": {
+    "commit": "69a907b1a9cd0deb85fef6a99b8c30caf50c4a7b",
+    "author": "Dave Slager <slager@users.noreply.github.com>",
+    "time": "2024-03-24 19:51:09",
+    "files": 1,
+    "merge": true,
+    "message": "Merge pull request #130 from ropensci/news_headings\n\nusethis-friendly NEWS headings"
+  },
+  "repo": "https://github.com/ropensci/rebird",
+  "pkg": "rebird"
+}

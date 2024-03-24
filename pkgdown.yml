@@ -1,0 +1,10 @@
+pandoc: 2.16.2
+pkgdown: 2.0.7
+pkgdown_sha: ~
+articles:
+  rebird_vignette: rebird_vignette.html
+last_built: 2024-03-24T20:20Z
+urls:
+  reference: https://docs.ropensci.org/rebird/reference
+  article: https://docs.ropensci.org/rebird/articles
+
