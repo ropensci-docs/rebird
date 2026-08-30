@@ -1,0 +1,115 @@
+# Download historical frequencies of bird observations from eBird
+
+*NOTE: Currently disabled.*
+
+## Usage
+
+``` r
+ebirdfreq(
+  loctype,
+  loc,
+  startyear = 1900,
+  endyear = format(Sys.Date(), "%Y"),
+  startmonth = 1,
+  endmonth = 12,
+  long = TRUE,
+  ...
+)
+```
+
+## Arguments
+
+- loctype:
+
+  String with location type. Either "states", "counties", or "hotspots".
+
+- loc:
+
+  String with location identifier. If querying states or provinces, the
+  two letter country code followed by the two letter state code and
+  separated by "-" (e.g. "US-NY"). If querying counties, is as in
+  states/provinces, but appending county identifier after a dash. For
+  counties in the US, the county codes is a 3-digit number specific to
+  each state (e.g. Bronx County: "US-NY-005"). For counties in Canada,
+  county codes are two-letter identifiers (e.g. Metro Vancouver:
+  "CA-BC-GV"). If querying hotspots then the unique identifier is a
+  6-digit number prepended with an "L" (e.g. "L196159"). All these codes
+  can be found by looking at the URL in each respective location/hotspot
+  webpage (which are accessible through the "Explore Data" tab).
+
+- startyear:
+
+  Starting year for query. Defaults to 1900.
+
+- endyear:
+
+  Ending year for query. Defaults to current year specified by
+  Sys.Date().
+
+- startmonth:
+
+  Starting month for query as an integer (1-12). Defaults to January.
+
+- endmonth:
+
+  Ending month for query as an integer (1-12). Defaults to December.
+
+- long:
+
+  Logical, Should output be in long format? Defaults to TRUE. If FALSE
+  then output will be in wide format.
+
+- ...:
+
+  Curl options passed on to
+  [`GET`](https://httr.r-lib.org/reference/GET.html)
+
+## Value
+
+*This function currently returns an error, but also provides the
+constructed url to manually obtain the data for the location and dates
+requested through your browser.*
+
+A data frame containing the collected information. If in long format:
+
+"monthQt": month and week (eBird data divides each month by four weeks)
+
+"comName": species common name
+
+"frequency": proportion of times the species was seen in a specified
+week
+
+"sampleSize" number of complete eBird checklists submitted for specified
+given week @return If in wide format, then first column is the species
+list and all other columns are of individual weeks (four in each month).
+First row contains the number of complete checklists for each week.
+
+## Details
+
+This function was the only `rebird` function to not use the API and
+formulated a url-based query instead. Now you need to be logged into
+eBird to download the frequency data, but we can't authenticate through
+R, so this function does not work. This functionality is likely to be
+added to the API in the future, so we are keeping the function in the
+meantime, but it throws an informative error, and provides the
+constructed url to obtain the frequency data manually through your
+browser.
+
+## References
+
+<http://ebird.org/>
+
+## Author
+
+Andy Teucher <andy.teucher@gmail.com>, Sebastian Pardo
+<sebpardo@gmail.com>
+
+## Examples
+
+``` r
+if (FALSE) { # \dontrun{
+ebirdfreq("states", "US-NY", 2014, 2014, 1, 12)
+ebirdfreq("counties", "CA-BC-GV", 1900, 2015, 1, 3)
+ebirdfreq("hotspots", "L196159", long=FALSE)
+} # }
+```

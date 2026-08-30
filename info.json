@@ -1,0 +1,13 @@
+{
+  "commit": {
+    "commit": "f4e151e8c6e2bbe290b2791d733dcf152d99a1ef",
+    "author": "Sebastián Pardo <sebpardo@gmail.com>",
+    "time": "2025-05-01T17:35:11Z",
+    "files": 1,
+    "merge": true,
+    "message": "Merge pull request #139 from RichardLitt/feat/remove-sensitive-data-from-vcr-using-regex\n\nfeat: Remove sensitive data from vcr"
+  },
+  "repo": "https://github.com/ropensci/rebird",
+  "pkg": "rebird",
+  "time": "2026-08-30T07:11:18Z"
+}
